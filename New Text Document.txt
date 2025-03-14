@@ -1,0 +1,18 @@
+chmod +x setup_project.sh
+./setup_project.sh
+
+
+python3 database_setup.py
+
+python3 save_experience.py
+
+pip install Flask
+
+اتصال به API:
+
+برای ذخیره تجربه:
+bash
+curl -X POST http://<ماشین-مجازی-آی‌پی>:5000/add_experience -H "Content-Type: application/json" -d '{"experience": "این یک تجربه نمونه است."}'
+برای بازیابی تجربیات:
+bash
+curl http://<ماشین-مجازی-آی‌پی>:5000/get_experiences
